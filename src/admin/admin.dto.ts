@@ -1,6 +1,6 @@
-import { IsAlpha, IsEmail, IsEmpty, IsNotEmpty, MaxLength, MinLength } from "class-validator";
+import { IsAlpha, IsEmail, IsNotEmpty, MaxLength, MinLength } from "class-validator";
 
-export class UserReg {
+export class AdminReg {
 
     @IsNotEmpty({ message: "Name can't be empty." })
     @MinLength(5, { message: "Name must be greater than 5 character." })
@@ -15,10 +15,10 @@ export class UserReg {
     @IsNotEmpty({ message: "Enter Your Email." })
     @IsEmail()
     email: string;
-    
+
 }
 
-export class UserLogin {
+export class AdminLogin {
 
     @IsNotEmpty({ message: "Name can't be empty." })
     @MinLength(5, { message: "Name must be greater than 5 character." })

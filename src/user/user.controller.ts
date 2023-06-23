@@ -10,4 +10,6 @@ export class UserController{
     getDashboard(): any{
         return this.userservice.getDashboard();
     }
+
+    
 }
