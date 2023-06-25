@@ -25,10 +25,36 @@ export class AdminController{
         return { message: 'Movie registered successfully', data: movie };
     }
 
+    //-----Add Tv - Serires-----//
+    @Post("/addtv")
+    addTv(
+        @Body('title') title: string,
+        @Body('description') description: string,
+        @Body('relesedate') relesedate: Date,
+        @Body('season') season: number,
+        @Body('rating') rating: number,
+        @Body('createat') createat: Date,
+        @Body('updateat') updateat: Date,
+        @Body('actors') actorNames: string[],
+        @Body('director') directorNames: string[],
+    ): any{
+        const tv = this.adminservice.addTv(title, description, relesedate, season, rating, createat, updateat, actorNames, directorNames);
+        return { message: 'Tv-seires registered successfully', data: tv};
+    }
+
+
+    //-----Show All Movies with Actor and Director names-----//
     @Get("/showmovie")
     async slowallMovie() {
         const movies = await this.adminservice.slowallMovie();
         return { data: movies };
     }
-    
+
+
+    //-----Show All Tv-series with Actor and Director names-----//
+    @Get("/showtv")
+    async slowallTv() {
+        const tv = await this.adminservice.slowallTv();
+        return { data: tv };
+    }
 }

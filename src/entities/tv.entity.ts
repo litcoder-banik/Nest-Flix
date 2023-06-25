@@ -16,19 +16,19 @@ export class TvEntity{
     description: string;
 
     @Column()
-    release_date: Date;
+    releasedate: Date;
 
     @Column()
-    seasons: number;
+    season: number;
 
     @Column()
     rating: number;
 
     @Column()
-    created_at: Date;
+    createdat: Date;
 
     @Column()
-    updated_at: Date;
+    updatedat: Date;
 
     // @OneToMany(() => TvActorEntity, (tvactors) => tvactors.tv)
     // tvactors: TvActorEntity[];

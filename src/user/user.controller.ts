@@ -13,5 +13,19 @@ export class UserController{
         return this.userservice.getDashboard();
     }
 
+    @Get("/showmovie")
+    async slowallMovie() {
+        const movies = await this.userservice.slowallMovie();
+        return { data: movies };
+    }
+
+
+    //-----Show All Tv-series with Actor and Director names-----//
+    @Get("/showtv")
+    async slowallTv() {
+        const tv = await this.userservice.slowallTv();
+        return { data: tv };
+    }
+
     
 }

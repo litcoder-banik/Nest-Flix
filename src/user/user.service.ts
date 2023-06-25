@@ -29,4 +29,19 @@ export class UserService{
     async getDashboard(): Promise<any>{
         return "This is Dashboard.";
     }
+
+    //-----Show All Movie-----//
+    async slowallMovie(): Promise<any> {
+        return this.movieRepo.find({
+          relations: ['actors', 'directors'],
+        });
+    }
+
+
+    //-----Show All Tv-series-----//
+    async slowallTv(): Promise<any> {
+        return this.tvRepo.find({
+          relations: ['actors', 'directors'],
+        });
+    }
 }
