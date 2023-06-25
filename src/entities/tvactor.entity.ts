@@ -7,11 +7,11 @@ export class TvActorEntity{
     @PrimaryGeneratedColumn()
     id: number;
 
-    @ManyToOne(() => TvEntity, (tv) => tv.tvactors)
-    @JoinTable()
-    tv: TvEntity;
+    // @ManyToOne(() => TvEntity, (tv) => tv.tvactors)
+    // @JoinTable()
+    // tv: TvEntity;
 
-    @ManyToOne(() => ActorEntity, (actor) => actor.tvactors)
-    @JoinTable()
-    actor: ActorEntity;
+    // @ManyToOne(() => ActorEntity, (actor) => actor.tvactors)
+    // @JoinTable()
+    // actor: ActorEntity;
 }

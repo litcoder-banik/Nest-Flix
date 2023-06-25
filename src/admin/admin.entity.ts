@@ -7,7 +7,7 @@ export class AdminEntity{
     id: number;
 
     @Column()
-    username: string;
+    adminname: string;
 
     @Column()
     password: string;

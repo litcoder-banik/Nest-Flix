@@ -1,4 +1,4 @@
-import { IsAlpha, IsEmail, IsEmpty, IsNotEmpty, MaxLength, MinLength } from "class-validator";
+import { IsAlpha, IsEmail, IsNotEmpty, MaxLength, MinLength } from "class-validator";
 
 export class UserReg {
 

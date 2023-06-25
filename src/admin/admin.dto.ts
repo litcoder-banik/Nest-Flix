@@ -6,7 +6,7 @@ export class AdminReg {
     @MinLength(5, { message: "Name must be greater than 5 character." })
     @MaxLength(10, { message: "Name must be less than 10 character." })
     @IsAlpha()
-    username: string;
+    adminname: string;
 
     @IsNotEmpty({ message: "Enter your password." })
     @MinLength(8, { message: "Password must be greater than 8 character." })
@@ -24,10 +24,15 @@ export class AdminLogin {
     @MinLength(5, { message: "Name must be greater than 5 character." })
     @MaxLength(10, { message: "Name must be less than 10 character." })
     @IsAlpha()
-    username: string;
+    adminname: string;
 
     @IsNotEmpty({ message: "Enter your password." })
     @MinLength(8, { message: "Password must be greater than 8 character." })
     password: string;
 
+}
+
+export class AddMovie{
+
+    
 }

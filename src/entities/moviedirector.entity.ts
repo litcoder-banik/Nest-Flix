@@ -7,11 +7,11 @@ export class MovieDirectorEntity{
     @PrimaryGeneratedColumn()
     id: number;
 
-    @ManyToOne(() => MovieEntity, (movie) => movie.moviedirectors)
-    @JoinTable()
-    movie: MovieEntity;
+    // @ManyToOne(() => MovieEntity, (movie) => movie.moviedirectors)
+    // @JoinTable()
+    // movie: MovieEntity;
 
-    @ManyToOne(() => DirectorEntity, (director) => director.moviedirectors)
-    @JoinTable()
-    director: DirectorEntity;
+    // @ManyToOne(() => DirectorEntity, (director) => director.moviedirectors)
+    // @JoinTable()
+    // director: DirectorEntity;
 }

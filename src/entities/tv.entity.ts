@@ -1,6 +1,8 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { TvActorEntity } from "./tvactor.entity";
 import { TvDirectorEntity } from "./tvdirector.entity";
+import { ActorEntity } from "./actor.entity";
+import { DirectorEntity } from "./director.entity";
 
 @Entity("Tvs")
 export class TvEntity{
@@ -28,9 +30,17 @@ export class TvEntity{
     @Column()
     updated_at: Date;
 
-    @OneToMany(() => TvActorEntity, (tvactors) => tvactors.tv)
-    tvactors: TvActorEntity[];
+    // @OneToMany(() => TvActorEntity, (tvactors) => tvactors.tv)
+    // tvactors: TvActorEntity[];
 
-    @OneToMany(() => TvDirectorEntity, (tvdirectors) => tvdirectors.tv)
-    tvdirectors: TvDirectorEntity[];
+    // @OneToMany(() => TvDirectorEntity, (tvdirectors) => tvdirectors.tv)
+    // tvdirectors: TvDirectorEntity[];
+
+    @ManyToMany(() => ActorEntity)
+    @JoinTable()
+    actors: ActorEntity[];
+
+    @ManyToMany(() => DirectorEntity)
+    @JoinTable()
+    directors: DirectorEntity[];
 }

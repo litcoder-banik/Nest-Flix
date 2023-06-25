@@ -22,6 +22,8 @@ import { MovieActorModule } from './modules/movieactor.module';
 import { TvActorModule } from './modules/tvactor.module';
 import { MovieDirectorModule } from './modules/moviedirector.module';
 import { TvDirectorModule } from './modules/tvdirector.module';
+import { AdminController } from './admin/admin.controller';
+import { AdminService } from './admin/admin.service';
 
 @Module({
     imports: [
@@ -61,7 +63,7 @@ import { TvDirectorModule } from './modules/tvdirector.module';
         })
 
     ],
-    controllers: [AppController],
-    providers: [AppService],
+    controllers: [AppController, AdminController,],
+    providers: [AppService, AdminService,],
 })
 export class AppModule { }

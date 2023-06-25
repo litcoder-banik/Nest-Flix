@@ -9,11 +9,11 @@ export class ActorEntity{
     id: number;
 
     @Column()
-    actorname: string;
+    name: string;
 
-    @OneToMany(() => MovieActorEntity, (movieactors) => movieactors.actor)
-    movieactors: MovieActorEntity[];
+    // @OneToMany(() => MovieActorEntity, (movieactors) => movieactors.actor)
+    // movieactors: MovieActorEntity[];
 
-    @OneToMany(() => TvActorEntity, (tvactors) => tvactors.actor)
-    tvactors: TvActorEntity[];
+    // @OneToMany(() => TvActorEntity, (tvactors) => tvactors.actor)
+    // tvactors: TvActorEntity[];
 }

@@ -1,6 +1,8 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinTable, ManyToMany, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import { MovieActorEntity } from "./movieactor.entity";
 import { MovieDirectorEntity } from "./moviedirector.entity";
+import { ActorEntity } from "./actor.entity";
+import { DirectorEntity } from "./director.entity";
 
 @Entity("Movies")
 export class MovieEntity{
@@ -14,7 +16,7 @@ export class MovieEntity{
     description: string;
 
     @Column()
-    release_date: Date;
+    releasedate: Date;
 
     @Column()
     duration: number;
@@ -23,14 +25,22 @@ export class MovieEntity{
     rating: number;
 
     @Column()
-    created_at: Date;
+    createdat: Date;
 
     @Column()
-    updated_at: Date;
+    updatedat: Date;
 
-    @OneToMany(() => MovieActorEntity, (movieactors) => movieactors.movie)
-    movieactors: MovieActorEntity[];
+    // @OneToMany(() => MovieActorEntity, (movieactors) => movieactors.movie)
+    // movieactors: MovieActorEntity[];
 
-    @OneToMany(() => MovieDirectorEntity, (moviedirectors) => moviedirectors.movie)
-    moviedirectors: MovieDirectorEntity[];
+    // @OneToMany(() => MovieDirectorEntity, (moviedirectors) => moviedirectors.movie)
+    // moviedirectors: MovieDirectorEntity[];
+
+    @ManyToMany(() => ActorEntity)
+    @JoinTable()
+    actors: ActorEntity[];
+
+    @ManyToMany(() => DirectorEntity)
+    @JoinTable()
+    directors: DirectorEntity[];
 }

@@ -8,11 +8,11 @@ export class DirectorEntity{
     id: number;
 
     @Column()
-    directorname: string;
+    name: string;
 
-    @OneToMany(() => MovieDirectorEntity, (moviedirectors) => moviedirectors.director)
-    moviedirectors: MovieDirectorEntity[];
+    // @OneToMany(() => MovieDirectorEntity, (moviedirectors) => moviedirectors.director)
+    // moviedirectors: MovieDirectorEntity[];
 
-    @OneToMany(() => TvDirectorEntity, (tvdirectors) => tvdirectors.director)
-    tvdirectors: TvDirectorEntity[];
+    // @OneToMany(() => TvDirectorEntity, (tvdirectors) => tvdirectors.director)
+    // tvdirectors: TvDirectorEntity[];
 }
