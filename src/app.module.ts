@@ -8,20 +8,12 @@ import { AdminEntity } from './admin/admin.entity';
 import { MovieEntity } from './entities/movie.entity';
 import { AdminModule } from './admin/admin.module';
 import { ActorEntity } from './entities/actor.entity';
-import { MovieActorEntity } from './entities/movieactor.entity';
 import { DirectorEntity } from './entities/director.entity';
-import { MovieDirectorEntity } from './entities/moviedirector.entity';
 import { TvEntity } from './entities/tv.entity';
-import { TvActorEntity } from './entities/tvactor.entity';
-import { TvDirectorEntity } from './entities/tvdirector.entity';
 import { MovieModule } from './modules/movie.module';
 import { TvModule } from './modules/tv.module';
 import { ActorModule } from './modules/actor.module';
 import { DirectorModule } from './modules/director.module';
-import { MovieActorModule } from './modules/movieactor.module';
-import { TvActorModule } from './modules/tvactor.module';
-import { MovieDirectorModule } from './modules/moviedirector.module';
-import { TvDirectorModule } from './modules/tvdirector.module';
 import { AdminController } from './admin/admin.controller';
 import { AdminService } from './admin/admin.service';
 
@@ -34,10 +26,6 @@ import { AdminService } from './admin/admin.service';
             TvEntity,
             ActorEntity,
             DirectorEntity,
-            MovieActorEntity,
-            TvActorEntity,
-            MovieDirectorEntity,
-            TvDirectorEntity,
         ]),
 
         UserModule,
@@ -46,10 +34,6 @@ import { AdminService } from './admin/admin.service';
         TvModule,
         ActorModule,
         DirectorModule,
-        MovieActorModule,
-        TvActorModule,
-        MovieDirectorModule,
-        TvDirectorModule,
 
         TypeOrmModule.forRoot({
             type: 'postgres',

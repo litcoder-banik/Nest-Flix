@@ -1,73 +1,68 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+NestFlix
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+NestFlix is a movie and TV series application built with NestJS.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Development Environment Setup
+To set up the development environment for NestFlix, follow these steps:
 
-## Description
+Clone the repository:
+git clone <https://github.com/litcoder-banik/SS-BACKEND-TASK-PARTHIB_BANIK.git>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Navigate to the project directory:
+cd nest-flix
 
-## Installation
+Install the dependencies:
+npm install
 
-```bash
-$ npm install
-```
+Set up the PostgreSQL database:
+Ensure you have PostgreSQL installed and running on your machine.
+Create a new database for "nestflix".
+Update the database configuration in the .env file with your PostgreSQL database details.
 
-## Running the app
+Start the development server:
+npm run start:dev
 
-```bash
-# development
-$ npm run start
+The server will run at http://localhost:3000.
 
-# watch mode
-$ npm run start:dev
+Running with Docker
+You can also run the NestFlix application using Docker. Docker allows you to easily package the application and its dependencies into a container.
 
-# production mode
-$ npm run start:prod
-```
+To run NestFlix with Docker, follow these steps:
 
-## Test
+Make sure Docker is installed and running on your machine.
 
-```bash
-# unit tests
-$ npm run test
+Build the Docker image:
+docker build -t nestflix/nest-flix .
 
-# e2e tests
-$ npm run test:e2e
+Run the Docker container:
+docker run -p 3000:3000 --env-file .env nestflix/nest-flix
+The application will be accessible at http://localhost:3000.
 
-# test coverage
-$ npm run test:cov
-```
+Security Implementations
+NestFlix incorporates the following security implementations:
 
-## Support
+Middleware with UseGuards: The application uses middleware with the UseGuards to protect routes that require authentication. The UseGuards checks for a valid user session before allowing access to protected resources.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+Input Validation: The application validates user input and implements proper validation checks to prevent common security vulnerabilities, such as cross-site scripting (XSS) and SQL injection attacks.
 
-## Stay in touch
+Testing with Postman
+NestFlix provides a Postman collection for testing the API endpoints. Follow the steps below to test the endpoints using Postman:
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Install Postman: Download Postman.
+Import the Postman collection:
 
-## License
+Open Postman and click on the Import button.
+Select the NestFlix.postman_collection.json file from the project's root directory.
+The collection will be imported into Postman.
+Update environment variables:
 
-Nest is [MIT licensed](LICENSE).
+Click on the gear icon to manage environments in Postman.
+Add a new environment and update the necessary variables like base_url to match your local development URL (http://localhost:3000).
+Test the API endpoints:
+
+Use the imported collection to send requests to the NestFlix API endpoints.
+
+Ensure you include any required headers or parameters as specified in the collection.
+Contributing
+
+Contributions to NestFlix are welcome! If you find any issues or have suggestions for improvements, please suggest me.

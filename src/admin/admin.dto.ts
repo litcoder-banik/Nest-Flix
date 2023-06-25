@@ -32,7 +32,3 @@ export class AdminLogin {
 
 }
 
-export class AddMovie{
-
-    
-}

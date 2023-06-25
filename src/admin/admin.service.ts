@@ -3,15 +3,10 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { ActorEntity } from "src/entities/actor.entity";
 import { DirectorEntity } from "src/entities/director.entity";
 import { MovieEntity } from "src/entities/movie.entity";
-import { MovieActorEntity } from "src/entities/movieactor.entity";
-import { MovieDirectorEntity } from "src/entities/moviedirector.entity";
 import { TvEntity } from "src/entities/tv.entity";
-import { TvActorEntity } from "src/entities/tvactor.entity";
-import { TvDirectorEntity } from "src/entities/tvdirector.entity";
 import { UserEntity } from "src/user/user.entity";
 import { Repository } from "typeorm";
 import { AdminEntity } from "./admin.entity";
-import { AddMovie } from "./admin.dto";
 
 @Injectable()
 export class AdminService {
@@ -22,11 +17,7 @@ export class AdminService {
         @InjectRepository(ActorEntity) private actorRepo: Repository<ActorEntity>,
         @InjectRepository(DirectorEntity) private directorRepo: Repository<DirectorEntity>,
         @InjectRepository(MovieEntity) private movieRepo: Repository<MovieEntity>,
-        @InjectRepository(MovieActorEntity) private movieactorRepo: Repository<MovieActorEntity>,
-        @InjectRepository(MovieDirectorEntity) private moviedirectorRepo: Repository<MovieDirectorEntity>,
         @InjectRepository(TvEntity) private tvRepo: Repository<TvEntity>,
-        @InjectRepository(TvActorEntity) private tvactorRepo: Repository<TvActorEntity>,
-        @InjectRepository(TvDirectorEntity) private tvdirectorRepo: Repository<TvDirectorEntity>,
     ) { }
 
 
@@ -67,7 +58,6 @@ export class AdminService {
         movie.directors = directors;
         return this.movieRepo.save(movie);
     }
-
 
 
     //-----Add Tv-series-----//
